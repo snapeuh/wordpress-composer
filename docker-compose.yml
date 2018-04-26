@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  apache:
+    build: ./docker/php
+    volumes: 
+      - .:/var/www/html/
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - wordpress-mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordpress
+
+volumes:
+  wordpress-mysql:

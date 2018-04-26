@@ -1,0 +1,10 @@
+{
+    "name": "root/app",
+    "type": "project",
+    "require": {
+        "johnpbloch/wordpress": "^4.9"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp-core"
+    }
+}
